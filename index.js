@@ -12,7 +12,7 @@ qrText.addEventListener("input", handleQRText);
 sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
 
-const defaultUrl = "https://github.com/rubbishspitfire";
+// const defaultUrl = "https://github.com/rubbishspitfire";
 let colorLight = "#fff",
     colorDark = "#000",
     text = defaultUrl,
@@ -54,7 +54,7 @@ async function handleShare() {
         try {
             const base64url = await resolveDataUrl();
             const blob = await (await fetch(base64url)).blob();
-            const file = new File([blob], "QRCode.jpeg", {
+            const file = new File([blob], "QRCode.png", {
                 type: blob.type,
             });
             await navigator.share({
